@@ -1,0 +1,7 @@
+JAVA_OPTS=-server -Xmx768M -Xms768M -Xmn512M -XX:MaxMetaspaceSize=128M -XX:MetaspaceSize=128M -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 -XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses -XX:+CMSClassUnloadingEnabled -XX:+ParallelRefProcEnabled -XX:+CMSScavengeBeforeRemark -XX:ErrorFile=/logs/hs_err_pid%p.log   -Xloggc:/logs/gc.log -XX:HeapDumpPath=/logs -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+HeapDumpOnOutOfMemoryError -XX:+PrintGCApplicationStoppedTime -XX:+PrintHeapAtGC
+SERVER_PORT=7777
+PROJECT_NAME=sentinel
+CSP_SENTINEL_DASHBOARD_SERVER=localhost:7777
+SENTINEL_DASHBOARD_AUTH_USERNAME=sentinel
+SENTINEL_DASHBOARD_AUTH_PASSWORD=sentinel
+SERVER_SERVLET_SESSION_TIMEOUT=24h

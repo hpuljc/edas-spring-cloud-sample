@@ -1,0 +1,15 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: sentinel-server
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+    #      discovery:
+#        server-addr: 127.0.0.1:8848
+    sentinel:
+      eager: true
+      transport:
+        dashboard: 127.0.0.1:7777

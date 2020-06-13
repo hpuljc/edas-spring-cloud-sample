@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  profiles:
+    active: default
+  application:
+    name: edas-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        prefix: ${spring.application.name}
+    gateway:
+      enabled: true
+      routes:
+        - id: test-server
+          uri: lb://test-server
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
+feign:
+  httpclient:
+    enabled: true

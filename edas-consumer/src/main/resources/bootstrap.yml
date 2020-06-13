@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: default
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        prefix: ${spring.application.name}
+feign:
+  httpclient:
+    enabled: true
